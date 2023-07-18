@@ -1,0 +1,162 @@
+# Flux Anti-Cheat Configuration
+#
+# (C) 2023 FluxAntiCheat
+# (C) 2023 MCGenerals
+#
+# PLEASE READ!
+#
+# FluxAntiCheat (hereinafter referred to as "the Software") prohibits any modification, duplication, resale,
+# or re-upload for commercial purposes without the permission of MCGenerals (hereinafter referred to as "the Rights Holder").
+# However, the Software allows modification, duplication, and re-upload for educational purposes, including personal learning.
+# The Rights Holder assumes no responsibility for any troubles or issues arising from the use of this Software.
+#
+# Furthermore, any projects that utilize code from this Software must be released under the MIT license or another license that permits code reuse,
+# unless specifically permitted by the Rights Holder. It is mandatory to include the name of this Software,
+# the utilized portions or links (mcgenerals.com), in the published source code.
+# If you agree to the above terms, please change agree: false to agree: true.
+
+agree: false
+
+#
+# settings. you can reload config with /flux reload
+#
+punish:
+  # PLEASE USE API TO CREATE CUSTOM BAN SYSTEM, IF THIS FEATURE IS NOT ENOUGH FOR YOU
+  message: " %br%&c[&6&lFlux&r&c]&e&l %player% &r&b has been banned for cheating!%br% "
+  command: "ban %player% &6BANNED!"
+
+checks:
+  combats:
+    autoclicker:
+      a:
+        punish: false
+        vl: 20
+        status: true
+    critical:
+      a:
+        punish: false
+        vl: 20
+        status: true
+      b:
+        punish: false
+        vl: 20
+        status: true
+    killaura:
+      a:
+        punish: false
+        vl: 20
+        status: true
+      b:
+        punish: false
+        vl: 20
+        status: false
+      c:
+        punish: false
+        vl: 20
+        status: true
+      d:
+        punish: false
+        vl: 20
+        status: true
+    reach:
+      a:
+        punish: false
+        vl: 20
+        status: true
+  movements:
+    flight:
+      a:
+        punish: false
+        vl: 20
+        status:  true
+      b:
+        punish: false
+        vl: 20
+        status: true
+      c:
+        punish: false
+        vl: 20
+        status: true
+      d:
+        punish: false
+        vl: 20
+        status: true
+      e:
+        punish: false
+        vl: 20
+        status: true
+    motion:
+      a:
+        punish: false
+        vl: 20
+        status: true
+      b:
+        punish: false
+        vl: 20
+        status: true
+      c:
+        punish: false
+        vl: 20
+        status: true
+      d:
+        punish: false
+        vl: 20
+        status: true
+      e:
+        punish: false
+        vl: 20
+        status: true
+    speed:
+      a:
+        punish: false
+        vl: 20
+        status: true
+      b:
+        punish: false
+        vl: 20
+        status: true
+      c:
+        punish: false
+        vl: 20
+        status: true
+      d:
+        punish: false
+        vl: 20
+        status: true
+      e:
+        punish: false
+        vl: 20
+        status: true
+  players:
+    nofall:
+      a:
+        punish: false
+        vl: 20
+        status: true
+      b:
+        punish: false
+        vl: 20
+        status: true
+    scaffold:
+      a:
+        punish: false
+        vl: 20
+        status: true
+      b:
+        punish: false
+        vl: 20
+        status: false
+    timer:
+      fast:
+        punish: false
+        vl: 20
+        status: true
+      slow:
+        punish: false
+        vl: 20
+        status: true
+    bot:
+      baritone:
+        punish: false
+        vl: 20
+        status: true

@@ -1,0 +1,10 @@
+name: Flux
+authors: ["MCGenerals"]
+website: "https://flux.mcgenerals.com"
+version: '${project.version}'
+main: com.baguars.flux.Flux
+commands:
+  flux:
+    permission: flux.admin
+depend:
+  - ProtocolLib
