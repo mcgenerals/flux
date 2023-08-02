@@ -11,6 +11,7 @@ import com.baguars.flux.check.checks.movements.motion.*;
 import com.baguars.flux.check.checks.movements.speed.*;
 import com.baguars.flux.check.checks.players.bot.Baritone;
 import com.baguars.flux.check.checks.players.nofall.GroundSpoofCheck;
+import com.baguars.flux.check.checks.players.nofall.NewNoFall;
 import com.baguars.flux.check.checks.players.scaffold.PitchCheck;
 import com.baguars.flux.check.checks.players.timer.TimerFast;
 import com.baguars.flux.check.checks.players.nofall.WierdDataCheck;
@@ -126,7 +127,7 @@ public final class Flux extends JavaPlugin {
         //Players
         checks.add( new WierdDataCheck());
         checks.add( new GroundSpoofCheck() );
-
+        checks.add( new NewNoFall() );
 
         checks.add( new YawCheck() );
         checks.add( new PitchCheck() );
@@ -156,7 +157,6 @@ public final class Flux extends JavaPlugin {
     public Performance pf = new Performance();
 
     public void protocolSetup(){
-
         ProtocolLibrary.getProtocolManager().addPacketListener(new PacketAdapter(  this,
                 ListenerPriority.NORMAL,
                 PacketType.Play.Client.FLYING,
@@ -169,15 +169,18 @@ public final class Flux extends JavaPlugin {
                 }
                 packetThread.execute(() ->{
                     long time = System.currentTimeMillis();
-                    if(event.getPacketType() == PacketType.Play.Client.FLYING){
-
-                    }
-                    if (event.getPacketType() == PacketType.Play.Client.POSITION || event.getPacketType() == PacketType.Play.Client.POSITION_LOOK) {
+                    if ( event.getPacketType() == PacketType.Play.Client.FLYING || event.getPacketType() == PacketType.Play.Client.POSITION || event.getPacketType() == PacketType.Play.Client.POSITION_LOOK) {
                         Player player = event.getPlayer();
                         // Custom move logic here
                         double x = event.getPacket().getDoubles().read(0);
                         double y = event.getPacket().getDoubles().read(1);
                         double z = event.getPacket().getDoubles().read(2);
+                        if( event.getPacketType() == PacketType.Play.Client.FLYING ){
+                            FluxPlayer fp = getPlayer(player);
+                            x = fp.lastLoc.getX();
+                            y = fp.lastLoc.getY();
+                            z = fp.lastLoc.getZ();
+                        }
                         //run on async!
                         PlayerListener.onMove(player,x,y,z,time);
                     }

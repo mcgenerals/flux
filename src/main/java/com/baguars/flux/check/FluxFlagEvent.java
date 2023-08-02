@@ -2,12 +2,9 @@ package com.baguars.flux.check;
 
 import com.baguars.flux.Flux;
 import com.baguars.flux.manager.FluxPlayer;
-import org.bukkit.Location;
-import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
-import org.bukkit.event.player.PlayerMoveEvent;
 
 public class FluxFlagEvent extends Event {
     private static final HandlerList handlers = new HandlerList();

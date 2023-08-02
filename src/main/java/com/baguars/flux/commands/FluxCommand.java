@@ -1,17 +1,13 @@
 package com.baguars.flux.commands;
 
 import com.baguars.flux.Flux;
-import com.baguars.flux.inventory.InventoryGUI;
 import com.baguars.flux.inventory.MainMenu;
 import com.baguars.flux.manager.FluxPlayer;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 import java.util.HashMap;

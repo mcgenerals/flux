@@ -32,6 +32,7 @@ public class FluxPlayer {
     public float lastYaw,lastPitch;
     public float deltaYaw,deltaPitch,lastDeltaYaw,lastDeltaPitch;
 
+
     public float hitYaw,hitPitch;
     public int ticksSinceHit;
 
@@ -73,6 +74,7 @@ public class FluxPlayer {
     public long lastBreakTime = 0;
     public long lastPlaceTime = 0;
 
+
     public Counter tick;
 
     public float yawTest = 0;
@@ -104,6 +106,11 @@ public class FluxPlayer {
 
     public Counter sameYawBuffer = new Counter(1000);
     public Counter criticalBBuffer = new Counter();
+
+    public Counter groundSpoofBufferA = new Counter();
+    public Counter groundSpoofBufferB = new Counter();
+
+    public double fallDistance = 0;
 
     ConcurrentLinkedQueue<BetterInteger> cps_left = new ConcurrentLinkedQueue<>();
     //ConcurrentLinkedQueue<BetterInteger> cps_right = new ConcurrentLinkedQueue<>();
